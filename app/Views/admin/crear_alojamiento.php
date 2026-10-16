@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Agregar Actividad</title>
+        <title>Agregar Alojamiento</title>
     </head>
     <body>
         <h1>Datos del alojamiento</h1>
