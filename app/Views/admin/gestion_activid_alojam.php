@@ -24,7 +24,7 @@
             <tbody>
                 <?php foreach ($actividades as $act): ?>
                     <tr>
-                        <td><img src="<?= esc($act['imagen']) ?>" alt="Imagen" width="100"></td>
+                        <td><img src="<?= esc(base_url('images/' . $act['imagen']), 'attr') ?>" alt="Imagen" width="100"></td>
                         <td><?= esc($act['nombre']) ?></td>
                         <td><?= esc($act['categoria']) ?></td>
                         <td><?= esc($act['ubicacion']) ?></td>
@@ -59,7 +59,7 @@
             <tbody>
                 <?php foreach ($alojamientos as $al): ?>
                     <tr>
-                        <td><img src="<?= esc($al['imagen']) ?>" alt="Imagen" width="100"></td>
+                        <td><img src="<?= esc(base_url('images/' . $al['imagen']), 'attr') ?>" alt="Imagen" width="100"></td>
                         <td><?= esc($al['nombre']) ?></td>
                         <td><?= esc($al['categoria']) ?></td>
                         <td><?= esc($al['ubicacion']) ?></td>
