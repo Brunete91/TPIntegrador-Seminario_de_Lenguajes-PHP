@@ -26,7 +26,6 @@ body {
     animation: pulseGlow 8s ease-in-out infinite alternate;
 }
 
-/* Keyframes que definen cómo se mueve y cambia de tamaño */
 @keyframes pulseGlow {
     0% {
         transform: translate(-50%, -50%) scale(0.9);
