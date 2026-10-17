@@ -5,12 +5,11 @@ use CodeIgniter\Model;
 class UserModel extends Model
 {
     protected $table = 'users';
+    protected $allowedFields = ['nombre', 'email', 'password', 'rol'];
 
-    protected $allowedFields = ['usuario', 'password', 'rol'];
-
-    public function getUserUsuario($usuario)
+    public function getUserEmail($email)
     {
-        return $this->where('usuario', $usuario)->first();
+        return $this->where('email', $email)->first();
     }
 
     public function getUsuarios()
@@ -21,5 +20,15 @@ class UserModel extends Model
     public function getUserId($id)
     {
         return $this->where('id', $id)->first();
+    }
+
+    public function saveUser($nombre, $email, $password, $rol)
+    {
+        $this->save([
+            'nombre' => $nombre,
+            'email' => $email,
+            'password' => password_hash($password, PASSWORD_DEFAULT),
+            'rol' => $rol
+        ]);
     }
 }

@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zona</title>
-</head>
-<body>
-    <h1>Geografía</h1>
-</body>
-</html>
+<?= $this->extend('layouts/main') ?>
+
+<?= $this->section('titulo') ?>
+Clima y geografía
+<?= $this->endSection() ?>
+
+<?= $this->section('contenido') ?>
+<h1>Clima y geografía</h1>
+<p>Acá va el contenido de la página de información sobre el clima y la geografía de la zona.</p>
+<?= $this->endSection() ?>

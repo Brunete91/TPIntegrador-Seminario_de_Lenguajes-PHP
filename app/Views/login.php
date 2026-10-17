@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio de sesión</title>
-</head>
-<body>
-    <h1>Login</h1>
+<?= $this->extend('layouts/main') ?>
+
+<?= $this->section('titulo') ?>
+Inicio de sesión
+<?= $this->endSection() ?>
+
+<?= $this->section('contenido') ?>
+<h1>Login</h1>
     <section>
     <h2>Iniciar sesión</h2>
 
@@ -28,6 +27,7 @@
 
         <button type="submit">Ingresar</button>
     </form>
+
+    <p>¿No tienes una cuenta? <a href="<?= esc(site_url('registrar_usuario'), 'attr') ?>">Regístrate aquí</a>.</p>
     </section>
-</body>
-</html>
+<?= $this->endSection() ?>

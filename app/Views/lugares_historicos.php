@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Destacados</title>
-</head>
-<body>
-    <h1>Lugares imperdibles</h1>
-</body>
-</html>
+<?= $this->extend('layouts/main') ?>
+
+<?= $this->section('titulo') ?>
+Lugares históricos
+<?= $this->endSection() ?>
+
+<?= $this->section('contenido') ?>
+<h1>Lugares imperdibles</h1>
+<p>Acá va el contenido de la página de lugares históricos.</p>
+<?= $this->endSection() ?>

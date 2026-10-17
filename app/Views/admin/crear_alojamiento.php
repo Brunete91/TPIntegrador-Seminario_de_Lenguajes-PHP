@@ -1,13 +1,12 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Agregar Alojamiento</title>
-    </head>
-    <body>
-        <h1>Datos del alojamiento</h1>
-        <form method="post" action="<?= site_url('alojamiento/store') ?>" enctype="multipart/form-data">
+<?= $this->extend('layouts/admin_layout') ?>
+
+<?= $this->section('titulo') ?>
+Agregar Alojamiento
+<?= $this->endSection() ?>
+
+<?= $this->section('contenido') ?>
+<h1>Datos del alojamiento</h1>
+        <form method="post" action="<?= site_url('admin/store_alojamiento') ?>" enctype="multipart/form-data">
             <label for="nombre">Nombre del alojamiento:</label>
             <input type="text" id="nombre" name="nombre" required><br><br>
             <label for="categoria">Categoría:</label>
@@ -22,5 +21,4 @@
             <input type="file" id="imagen" name="imagen"><br><br>
             <button type="submit">Guardar</button>
         </form>
-    </body>
-</html>
+<?= $this->endSection() ?>

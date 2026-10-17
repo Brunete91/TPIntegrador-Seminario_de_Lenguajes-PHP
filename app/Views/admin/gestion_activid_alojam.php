@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Gestión de Actividades y Alojamientos</title>
-    </head>
-    <body>
-        <h1>Gestión de Actividades y Alojamientos</h1><br>
+<?= $this->extend('layouts/admin_layout') ?>
+
+<?= $this->section('titulo') ?>
+Gestión de Actividades y Alojamientos
+<?= $this->endSection() ?>
+
+<?= $this->section('contenido') ?>
+<h1>Gestión de Actividades y Alojamientos</h1><br>
         <h3>Actividades</h3>
         <a href="<?= esc(site_url('admin/crear_actividad'), 'attr') ?>">Añadir Actividad</a>
         <table border="1">
@@ -83,5 +82,4 @@
                 <button type="submit">Cerrar sesión</button>
             </form>
         </div>
-    </body>
-</html>
+<?= $this->endSection() ?>

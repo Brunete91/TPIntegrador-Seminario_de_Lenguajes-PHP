@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cómo moverse</title>
-</head>
-<body>
-    <h1>Información útil</h1>
-</body>
-</html>
+<?= $this->extend('layouts/main') ?>
+
+<?= $this->section('titulo') ?>
+Cómo moverse
+<?= $this->endSection() ?>
+
+<?= $this->section('contenido') ?>
+<h1>Cómo moverse</h1>
+<p>Acá va el contenido de la página de información útil para turistas.</p>
+<?= $this->endSection() ?>

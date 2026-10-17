@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo</title>
-</head>
-<body>
-    <h1>Gastronomia y Actividades</h1>
-</body>
-</html>
+<?= $this->extend('layouts/main') ?>
+
+<?= $this->section('titulo') ?>
+Catálogo de actividades y gastronomía
+<?= $this->endSection() ?>
+
+<?= $this->section('contenido') ?>
+<h1>Catálogo de actividades y gastronomía</h1>
+<p>Acá va el contenido de la página de información sobre las actividades y la gastronomía de la zona.</p>
+<?= $this->endSection() ?>

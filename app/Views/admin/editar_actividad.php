@@ -1,13 +1,12 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Editar Actividad</title>
-    </head>
-    <body>
-        <h1>Editar Actividad</h1>
-        <form method="post" action="<?= site_url('actividad/update/' .$actividad['id']) ?>" enctype="multipart/form-data">
+<?= $this->extend('layouts/admin_layout') ?>
+
+<?= $this->section('titulo') ?>
+Editar Actividad
+<?= $this->endSection() ?>
+
+<?= $this->section('contenido') ?>
+<h1>Editar Actividad</h1>
+        <form method="post" action="<?= site_url('admin/update_actividad/' .$actividad['id']) ?>" enctype="multipart/form-data">
             <label for="nombre">Nombre de la actividad:</label>
             <input type="text" id="nombre" name="nombre" value="<?= esc($actividad['nombre']) ?>" required><br><br>
             <label for="categoria">Categoría:</label>
@@ -22,5 +21,4 @@
             <input type="file" id="imagen" name="imagen"><br><br>
             <button type="submit">Guardar Cambios</button>
         </form>
-    </body>
-</html>
+<?= $this->endSection() ?>

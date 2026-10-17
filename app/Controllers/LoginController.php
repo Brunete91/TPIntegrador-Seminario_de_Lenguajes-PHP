@@ -32,14 +32,14 @@ class LoginController extends BaseController
 
     public function autenticar(): RedirectResponse
     {
-        $datos = $this->request->getPost(['usuario', 'password']);
-        $user = $this->userModel->getUserUsuario($datos['usuario']);
+        $datos = $this->request->getPost(['email', 'password']);
+        $user = $this->userModel->getUserEmail($datos['email']);
 
         if (! $this->validateData($datos, [
-            'usuario' => 'required|max_length[45]',
-            'password' => 'required|max_length[90]',
+            'email' => 'required|valid_email',
+            'password' => 'required|max_length[120]',
         ])) {
-            session()->setFlashdata('mensaje', 'Completá el usuario y la contraseña con valores válidos.');
+            session()->setFlashdata('mensaje', 'Completá el email y la contraseña con valores válidos.');
 
             return redirect()->to(site_url('login'));
         }
@@ -47,7 +47,7 @@ class LoginController extends BaseController
         if (
             !$user || !password_verify($datos['password'], $user['password'])
         ) {
-            session()->setFlashdata('mensaje', 'Usuario o contraseña incorrectos.');
+            session()->setFlashdata('mensaje', 'Email o contraseña incorrectos.');
 
             return redirect()->to(site_url('login'));
         }

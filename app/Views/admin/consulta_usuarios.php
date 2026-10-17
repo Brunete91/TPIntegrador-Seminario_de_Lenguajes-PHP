@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consulta de Usuarios</title>
-</head>
-<body>
-    <h1>Consulta de Usuarios</h1>
+<?= $this->extend('layouts/admin_layout') ?>
+
+<?= $this->section('titulo') ?>
+Consulta de Usuarios
+<?= $this->endSection() ?>
+
+<?= $this->section('contenido') ?>
+<h1>Consulta de Usuarios</h1>
     <table border="1">
         <thead>
             <tr>
@@ -27,5 +26,4 @@
             <?php endforeach; ?>
         </tbody>
     </table>
-</body>
-</html>
+<?= $this->endSection() ?>

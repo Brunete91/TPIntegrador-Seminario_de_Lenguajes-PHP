@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers;
+use App\Models\UserModel;
 
 class HomeController extends BaseController
 {
@@ -32,5 +33,31 @@ class HomeController extends BaseController
     public function lugares_imp()
     {
         return view('lugares_historicos');
+    }
+    
+    public function login()
+    {
+        return view('login');
+    }
+
+    public function __construct()
+    {
+        $this->userModel = new UserModel();
+    }
+
+    public function registrar_usuario()
+    {
+        return view('registrar_usuario');
+    }
+
+    public function storeUsuario()
+    {
+        $nombre = $this->request->getPost('nombre');
+        $email = $this->request->getPost('email');
+        $password = $this->request->getPost('password');
+        $rol = 'cliente';
+        $this->userModel->saveUser($nombre, $email, $password, $rol);
+
+        return redirect()->to('/login')->with('success', 'Usuario registrado exitosamente.');
     }
 }

@@ -11,6 +11,9 @@ $routes->get('/gastronomia_actividades', 'HomeController::catalogo');
 $routes->get('/geografia', 'HomeController::zona_geo');
 $routes->get('/lugares_historicos', 'HomeController::lugares_imp');
 $routes->get('/info_turista', 'HomeController::info_practica');
+$routes->get('/login', 'HomeController::login');
+$routes->get('/registrar_usuario', 'HomeController::registrar_usuario');
+$routes->post('/store_usuario', 'HomeController::storeUsuario');
 
 $routes->group('', ['filter' => 'login'], static function (RouteCollection $routes) {
     $routes->get('/admin/gestion_activid_alojam', 'AdminController::gestion_actividades_alojamiento');
