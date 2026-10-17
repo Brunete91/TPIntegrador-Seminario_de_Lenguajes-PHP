@@ -15,10 +15,13 @@
         <a class="nav-link" href="<?= esc(base_url('/admin/consulta_usuarios'), 'attr') ?>">Consulta de Usuarios</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="<?= esc(base_url('/logout'), 'attr') ?>">Cerrar Sesión</a>
+        <form action="<?= esc(site_url('logout'), 'attr') ?>" method="post">
+          <?= csrf_field() ?>
+          <button class="nav-link" type="submit">Cerrar Sesión</button>
+        </form>
       </li>
       <span class="navbar-text">
-          Administrador: <?= esc(session()->get('username'), 'html') ?>
+          Administrador: <?= esc(session()->get('nombre'), 'html') ?>
       </span>
     </ul>
   </div>

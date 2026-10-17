@@ -7,6 +7,7 @@ Editar Actividad
 <?= $this->section('contenido') ?>
 <h1>Editar Actividad</h1>
         <form method="post" action="<?= site_url('admin/update_actividad/' .$actividad['id']) ?>" enctype="multipart/form-data">
+            <?= csrf_field() ?>
             <label for="nombre">Nombre de la actividad:</label>
             <input type="text" id="nombre" name="nombre" value="<?= esc($actividad['nombre']) ?>" required><br><br>
             <label for="categoria">Categoría:</label>
@@ -16,7 +17,7 @@ Editar Actividad
             <label for="precio">Precio:</label>
             <input type="number" id="precio" name="precio" step="0.01" value="<?= esc($actividad['precio']) ?>" required><br><br>
             <label for="cupos">Cupos Disponibles:</label>
-            <input type="number" id="cupos" name="cupos" value="<?= esc($actividad['cupos_disponibles']) ?>" required><br><br>  
+            <input type="number" id="cupos" name="cupos" value="<?= esc($actividad['cupos']) ?>" required><br><br>  
             <label for="imagen">Imagen:</label>
             <input type="file" id="imagen" name="imagen"><br><br>
             <button type="submit">Guardar Cambios</button>

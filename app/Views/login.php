@@ -16,13 +16,13 @@ Inicio de sesión
     <form action="<?= esc(site_url('login'), 'attr') ?>" method="post">
         <?= csrf_field() ?>
         <div>
-            <label for="usuario">Usuario</label>
-            <input id="usuario" name="usuario" type="text" maxlength="50" autocomplete="username" required>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" maxlength="50" autocomplete="username" required>
         </div>
 
         <div>
             <label for="password">Contraseña</label>
-            <input id="password" name="password" type="password" maxlength="128" autocomplete="current-password" required>
+            <input id="password" name="password" type="password" maxlength="120" autocomplete="current-password" required>
         </div>
 
         <button type="submit">Ingresar</button>

@@ -5,7 +5,7 @@ use CodeIgniter\Model;
 class ReservaModel extends Model
 {
     protected $table = 'reservas';
-    protected $allowedFields = ['id_usuario', 'id_alojamiento', 'id_actividad', 'fecha_reserva'];
+    protected $allowedFields = ['usuario', 'actividad_alojamiento', 'fecha_reserva', 'cantidad'];
 
     public function getReservas()
     {

@@ -7,6 +7,7 @@ Editar Alojamiento
 <?= $this->section('contenido') ?>
 <h1>Editar Alojamiento</h1>
         <form method="post" action="<?= site_url('admin/update_alojamiento/' .$alojamiento['id']) ?>" enctype="multipart/form-data">
+            <?= csrf_field() ?>
             <label for="nombre">Nombre del alojamiento:</label>
             <input type="text" id="nombre" name="nombre" value="<?= esc($alojamiento['nombre']) ?>" required><br><br>
             <label for="categoria">Categoría:</label>
@@ -16,7 +17,7 @@ Editar Alojamiento
             <label for="precio">Precio:</label>
             <input type="number" id="precio" name="precio" step="0.01" value="<?= esc($alojamiento['precio']) ?>" required><br><br>
             <label for="cupos">Cupos Disponibles:</label>
-            <input type="number" id="cupos" name="cupos" value="<?= esc($alojamiento['cupos_disponibles']) ?>" required><br><br>  
+            <input type="number" id="cupos" name="cupos" value="<?= esc($alojamiento['cupos']) ?>" required><br><br>  
             <label for="imagen">Imagen:</label>
             <input type="file" id="imagen" name="imagen"><br><br>
             <button type="submit">Guardar Cambios</button>

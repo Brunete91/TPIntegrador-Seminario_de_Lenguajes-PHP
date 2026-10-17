@@ -28,7 +28,7 @@ Gestión de Actividades y Alojamientos
                         <td><?= esc($act['categoria']) ?></td>
                         <td><?= esc($act['ubicacion']) ?></td>
                         <td><?= esc($act['precio']) ?></td>
-                        <td><?= esc($act['cupos_disponibles']) ?></td>
+                        <td><?= esc($act['cupos']) ?></td>
                         <td>
                             <a href="<?= esc(site_url('admin/editar_actividad/' . $act['id']), 'attr') ?>">Editar</a>
                             <form action="<?= esc(site_url('admin/eliminar_actividad/' . $act['id']), 'attr') ?>" method="post" style="display:inline;">
@@ -63,7 +63,7 @@ Gestión de Actividades y Alojamientos
                         <td><?= esc($al['categoria']) ?></td>
                         <td><?= esc($al['ubicacion']) ?></td>
                         <td><?= esc($al['precio']) ?></td>
-                        <td><?= esc($al['cupos_disponibles']) ?></td>
+                        <td><?= esc($al['cupos']) ?></td>
                         <td>
                             <a href="<?= esc(site_url('admin/editar_alojamiento/' . $al['id']), 'attr') ?>">Editar</a>
                             <form action="<?= esc(site_url('admin/eliminar_alojamiento/' . $al['id']), 'attr') ?>" method="post" style="display:inline;">
@@ -75,11 +75,4 @@ Gestión de Actividades y Alojamientos
                 <?php endforeach; ?>
             </tbody>
         </table>
-
-        <div>
-            <form action="<?= esc(site_url('logout'), 'attr') ?>" method="post">
-                <?= csrf_field() ?>
-                <button type="submit">Cerrar sesión</button>
-            </form>
-        </div>
 <?= $this->endSection() ?>

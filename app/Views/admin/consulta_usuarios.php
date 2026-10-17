@@ -11,7 +11,7 @@ Consulta de Usuarios
             <tr>
                 <th>ID</th>
                 <th>Nombre</th>
-                <th>Usuario</th>
+                <th>Email</th>
                 <th>Rol</th>
             </tr>
         </thead>
@@ -20,7 +20,7 @@ Consulta de Usuarios
                 <tr>
                     <td><?= esc($u['id']) ?></td>
                     <td><?= esc($u['nombre']) ?></td>
-                    <td><?= esc($u['usuario']) ?></td>
+                    <td><?= esc($u['email']) ?></td>
                     <td><?= esc($u['rol']) ?></td>
                 </tr>
             <?php endforeach; ?>

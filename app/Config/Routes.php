@@ -12,6 +12,7 @@ $routes->get('/geografia', 'HomeController::zona_geo');
 $routes->get('/lugares_historicos', 'HomeController::lugares_imp');
 $routes->get('/info_turista', 'HomeController::info_practica');
 $routes->get('/login', 'HomeController::login');
+$routes->post('/login', 'LoginController::autenticar');
 $routes->get('/registrar_usuario', 'HomeController::registrar_usuario');
 $routes->post('/store_usuario', 'HomeController::storeUsuario');
 

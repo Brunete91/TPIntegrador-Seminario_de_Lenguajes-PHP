@@ -54,13 +54,13 @@ class AdminController extends BaseController
     public function storeActividad()
     {
         if (empty($_FILES['imagen']['name'])) {
-            $nombreImagen = 'default.jpg';
+            $nombreImagen = 'logotipo.png';
         } else {
             $config['upload_path'] = './images/';
             $config['allowed_types'] = 'jpg|jpeg|png|gif';
             $this->load->library('upload', $config);
             if (!$this->upload->do_upload('imagen')) {
-                $nombreImagen = 'default.jpg';
+                $nombreImagen = 'logotipo.png';
             } else {
                 $data = $this->upload->data();
                 $nombreImagen = $data['file_name'];
@@ -80,13 +80,13 @@ class AdminController extends BaseController
     public function storeAlojamiento()
     {
         if (empty($_FILES['imagen']['name'])) {
-            $nombreImagen = 'default.jpg';
+            $nombreImagen = 'logotipo.png';
         } else {
             $config['upload_path'] = './images/';
             $config['allowed_types'] = 'jpg|jpeg|png|gif';
             $this->load->library('upload', $config);
             if (!$this->upload->do_upload('imagen')) {
-                $nombreImagen = 'default.jpg';
+                $nombreImagen = 'logotipo.png';
             } else {
                 $data = $this->upload->data();
                 $nombreImagen = $data['file_name'];
@@ -111,10 +111,12 @@ class AdminController extends BaseController
         $precio = $this->request->getPost('precio');
         $cupos = $this->request->getPost('cupos');
 
-        if($this->request->getFile('imagen') == null){
-            $alojamiento = $this->alojamientoModel->getAlojamiento($id);
-            $nombreImagen = $alojamiento['imagen'];
-        } else {
+        $imagen = $this->request->getFile('imagen');
+        $alojamiento = $this->alojamientoModel->getAlojamiento($id);
+
+        $nombreImagen = $alojamiento['imagen'];
+
+        if ($imagen->getError() !== UPLOAD_ERR_NO_FILE) {
             $config['upload_path'] = './images/';
             $config['allowed_types'] = 'jpg|jpeg|png|gif';
             $this->load->library('upload', $config);
@@ -135,10 +137,12 @@ class AdminController extends BaseController
         $cupos = $this->request->getPost('cupos');
         $precio = $this->request->getPost('precio');
 
-        if($this->request->getFile('imagen') == null){
-            $actividad = $this->actividadModel->getActividad($id);
-            $nombreImagen = $actividad['imagen'];
-        } else {
+        $imagen = $this->request->getFile('imagen');
+        $actividad = $this->actividadModel->getActividad($id);
+
+        $nombreImagen = $actividad['imagen'];
+
+        if ($imagen->getError() !== UPLOAD_ERR_NO_FILE) {
             $config['upload_path'] = './images/';
             $config['allowed_types'] = 'jpg|jpeg|png|gif';
             $this->load->library('upload', $config);

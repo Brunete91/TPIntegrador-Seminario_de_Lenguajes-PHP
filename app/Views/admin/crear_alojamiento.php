@@ -7,6 +7,7 @@ Agregar Alojamiento
 <?= $this->section('contenido') ?>
 <h1>Datos del alojamiento</h1>
         <form method="post" action="<?= site_url('admin/store_alojamiento') ?>" enctype="multipart/form-data">
+            <?= csrf_field() ?>
             <label for="nombre">Nombre del alojamiento:</label>
             <input type="text" id="nombre" name="nombre" required><br><br>
             <label for="categoria">Categoría:</label>

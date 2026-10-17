@@ -37,7 +37,9 @@ class HomeController extends BaseController
     
     public function login()
     {
-        return view('login');
+        return view('login', [
+            'mensaje' => session()->getFlashdata('mensaje'),
+        ]);
     }
 
     public function __construct()
