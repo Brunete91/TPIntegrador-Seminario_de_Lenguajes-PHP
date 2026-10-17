@@ -7,6 +7,7 @@ Registro de usuario
 <?= $this->section('contenido') ?>
 <h1>Registro de usuario</h1>
 <form action="<?= site_url('/store_usuario') ?>" method="post">
+    <?= csrf_field() ?>
     <label for="nombre">Nombre:</label>
     <input type="text" id="nombre" name="nombre" required><br><br>
 

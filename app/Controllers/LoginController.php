@@ -37,7 +37,7 @@ class LoginController extends BaseController
 
         if (! $this->validateData($datos, [
             'email' => 'required|valid_email',
-            'password' => 'required|max_length[120]',
+            'password' => 'required|max_length[128]',
         ])) {
             session()->setFlashdata('mensaje', 'Completá el email y la contraseña con valores válidos.');
 
