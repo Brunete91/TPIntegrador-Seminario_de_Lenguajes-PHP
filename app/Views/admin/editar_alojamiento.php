@@ -21,38 +21,26 @@ Editar Alojamiento
                         <input class="form-check-input" type="radio" name="categoria" id="hotel_3_estrellas" value="Hotel 3 estrellas" <?= $alojamiento['categoria'] === 'Hotel 3 estrellas' ? 'checked' : '' ?> required>
                         <label class="form-check-label" for="hotel_3_estrellas">Hotel 3 Estrellas</label>
                     </div>
-                </div>
-                <div class="col-sm-7">
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="categoria" id="hotel_4_estrellas" value="Hotel 4 estrellas" <?= $alojamiento['categoria'] === 'Hotel 4 estrellas' ? 'checked' : '' ?> required>
                         <label class="form-check-label" for="hotel_4_estrellas">Hotel 4 Estrellas</label>
                     </div>
-                </div>
-                <div class="col-sm-7">
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="categoria" id="hotel_5_estrellas" value="Hotel 5 estrellas" <?= $alojamiento['categoria'] === 'Hotel 5 estrellas' ? 'checked' : '' ?> required>
                         <label class="form-check-label" for="hotel_5_estrellas">Hotel 5 Estrellas</label>
                     </div>
-                </div>
-                <div class="col-sm-7">
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="categoria" id="apart_hotel" value="Apart Hotel" <?= $alojamiento['categoria'] === 'Apart Hotel' ? 'checked' : '' ?> required>
                         <label class="form-check-label" for="apart_hotel">Apart Hotel</label>
                     </div>
-                </div>
-                <div class="col-sm-7">
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="categoria" id="hotel_boutique" value="Hotel Boutique" <?= $alojamiento['categoria'] === 'Hotel Boutique' ? 'checked' : '' ?> required>
                         <label class="form-check-label" for="hotel_boutique">Hotel Boutique</label>
                     </div>
-                </div>
-                <div class="col-sm-7">
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="categoria" id="hostal" value="Hostal" <?= $alojamiento['categoria'] === 'Hostal' ? 'checked' : '' ?> required>
                         <label class="form-check-label" for="hostal">Hostal</label>
                     </div>
-                </div>
-                <div class="col-sm-7">
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="categoria" id="otro_categoria_alojamiento" value="Otro alojamiento" <?= $alojamiento['categoria'] === 'Otro alojamiento' ? 'checked' : '' ?> required>
                         <label class="form-check-label" for="otro_categoria_alojamiento">Otro</label>

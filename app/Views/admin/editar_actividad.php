@@ -25,38 +25,26 @@ Editar Actividad
                         <input class="form-check-input" type="radio" name="categoria" id="museo" value="Museo" <?= $actividad['categoria'] === 'Museo' ? 'checked' : '' ?> required>
                         <label class="form-check-label" for="museo">Museo</label>
                     </div>
-                </div>
-                <div class="col-sm-7">
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="categoria" id="bar" value="Bar" <?= $actividad['categoria'] === 'Bar' ? 'checked' : '' ?> required>
                         <label class="form-check-label" for="bar">Bar</label>
                     </div>
-                </div>
-                <div class="col-sm-7">
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="categoria" id="restaurante" value="Restaurante" <?= $actividad['categoria'] === 'Restaurante' ? 'checked' : '' ?> required>
                         <label class="form-check-label" for="restaurante">Restaurante</label>
                     </div>
-                </div>
-                <div class="col-sm-7">
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="categoria" id="centro_cultural" value="Centro cultural" <?= $actividad['categoria'] === 'Centro cultural' ? 'checked' : '' ?> required>
                         <label class="form-check-label" for="centro_cultural">Centro Cultural</label>
                     </div>
-                </div>
-                <div class="col-sm-7">
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="categoria" id="navegacion_fluvial" value="Navegación fluvial" <?= $actividad['categoria'] === 'Navegación fluvial' ? 'checked' : '' ?> required>
                         <label class="form-check-label" for="navegacion_fluvial">Navegación Fluvial</label>
                     </div>
-                </div>
-                <div class="col-sm-7">
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="categoria" id="cafeteria" value="Cafetería" <?= $actividad['categoria'] === 'Cafetería' ? 'checked' : '' ?> required>
                         <label class="form-check-label" for="cafeteria">Cafetería</label>
                     </div>
-                </div>
-                <div class="col-sm-7">
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="categoria" id="otro" value="Otro" <?= $actividad['categoria'] === 'Otro' ? 'checked' : '' ?> required>
                         <label class="form-check-label" for="otro">Otro</label>

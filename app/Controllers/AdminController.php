@@ -122,7 +122,7 @@ class AdminController extends BaseController
             }
         }
 
-        $this->alojamientoModel->updateAlojamiento($id, $nombre, $categoria, $ubicacion, $precio, $cupos, $nombreImagen);
+        $this->alojamientoModel->updateAlojamiento($id, $nombre, $categoria, $ubicacion, $cupos, $precio, $nombreImagen);
 
         return redirect()->to(base_url('admin/gestion_activid_alojam'));
     }
