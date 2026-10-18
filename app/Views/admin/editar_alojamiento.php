@@ -8,24 +8,85 @@ Editar Alojamiento
 <h1>Editar Alojamiento</h1>
         <form method="post" action="<?= site_url('admin/update_alojamiento/' .$alojamiento['id']) ?>" enctype="multipart/form-data">
             <?= csrf_field() ?>
-            <label for="nombre">Nombre del alojamiento:</label>
-            <input type="text" id="nombre" name="nombre" value="<?= esc($alojamiento['nombre']) ?>" required><br><br>
-            <label for="categoria">Categoría:</label>
-            <input type="radio" id="categoria" name="categoria" value="Hotel 3 estrellas" <?= $alojamiento['categoria'] === 'Hotel 3 estrellas' ? 'checked' : '' ?> required> Hotel 3 Estrellas
-            <input type="radio" id="categoria" name="categoria" value="Hotel 4 estrellas" <?= $alojamiento['categoria'] === 'Hotel 4 estrellas' ? 'checked' : '' ?> required> Hotel 4 Estrellas
-            <input type="radio" id="categoria" name="categoria" value="Hotel 5 estrellas" <?= $alojamiento['categoria'] === 'Hotel 5 estrellas' ? 'checked' : '' ?> required> Hotel 5 Estrellas
-            <input type="radio" id="categoria" name="categoria" value="Apart Hotel" <?= $alojamiento['categoria'] === 'Apart Hotel' ? 'checked' : '' ?> required> Apart Hotel
-            <input type="radio" id="categoria" name="categoria" value="Hotel Boutique" <?= $alojamiento['categoria'] === 'Hotel Boutique' ? 'checked' : '' ?> required> Hotel Boutique
-            <input type="radio" id="categoria" name="categoria" value="Hostal" <?= $alojamiento['categoria'] === 'Hostal' ? 'checked' : '' ?> required> Hostal
-            <input type="radio" id="categoria" name="categoria" value="Otro" <?= $alojamiento['categoria'] === 'Otro' ? 'checked' : '' ?> required> Otro<br><br>
-            <label for="ubicacion">Ubicación:</label>
-            <input type="text" id="ubicacion" name="ubicacion" value="<?= esc($alojamiento['ubicacion']) ?>" required><br><br>
-            <label for="precio">Precio:</label>
-            <input type="number" id="precio" name="precio" step="0.01" value="<?= esc($alojamiento['precio']) ?>" required><br><br>
-            <label for="cupos">Cupos Disponibles:</label>
-            <input type="number" id="cupos" name="cupos" value="<?= esc($alojamiento['cupos']) ?>" required><br><br>  
-            <label for="imagen">Imagen:</label>
-            <input type="file" id="imagen" name="imagen"><br><br>
-            <button type="submit">Guardar Cambios</button>
+            <div class="row mb-3">
+                <label for="nombre" class="col-sm-2 col-form-label">Nombre del alojamiento:</label>
+                <div class="col-sm-7">
+                    <input type="text" class="form-control" id="nombre" name="nombre" value="<?= esc($alojamiento['nombre']) ?>" required>
+                </div>
+            </div>
+            <fieldset class="row mb-3">
+                <legend class="col-form-label col-sm-2 pt-0">Categoría:</legend>
+                <div class="col-sm-7">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="categoria" id="hotel_3_estrellas" value="Hotel 3 estrellas" <?= $alojamiento['categoria'] === 'Hotel 3 estrellas' ? 'checked' : '' ?> required>
+                        <label class="form-check-label" for="hotel_3_estrellas">Hotel 3 Estrellas</label>
+                    </div>
+                </div>
+                <div class="col-sm-7">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="categoria" id="hotel_4_estrellas" value="Hotel 4 estrellas" <?= $alojamiento['categoria'] === 'Hotel 4 estrellas' ? 'checked' : '' ?> required>
+                        <label class="form-check-label" for="hotel_4_estrellas">Hotel 4 Estrellas</label>
+                    </div>
+                </div>
+                <div class="col-sm-7">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="categoria" id="hotel_5_estrellas" value="Hotel 5 estrellas" <?= $alojamiento['categoria'] === 'Hotel 5 estrellas' ? 'checked' : '' ?> required>
+                        <label class="form-check-label" for="hotel_5_estrellas">Hotel 5 Estrellas</label>
+                    </div>
+                </div>
+                <div class="col-sm-7">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="categoria" id="apart_hotel" value="Apart Hotel" <?= $alojamiento['categoria'] === 'Apart Hotel' ? 'checked' : '' ?> required>
+                        <label class="form-check-label" for="apart_hotel">Apart Hotel</label>
+                    </div>
+                </div>
+                <div class="col-sm-7">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="categoria" id="hotel_boutique" value="Hotel Boutique" <?= $alojamiento['categoria'] === 'Hotel Boutique' ? 'checked' : '' ?> required>
+                        <label class="form-check-label" for="hotel_boutique">Hotel Boutique</label>
+                    </div>
+                </div>
+                <div class="col-sm-7">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="categoria" id="hostal" value="Hostal" <?= $alojamiento['categoria'] === 'Hostal' ? 'checked' : '' ?> required>
+                        <label class="form-check-label" for="hostal">Hostal</label>
+                    </div>
+                </div>
+                <div class="col-sm-7">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="categoria" id="otro_categoria_alojamiento" value="Otro alojamiento" <?= $alojamiento['categoria'] === 'Otro alojamiento' ? 'checked' : '' ?> required>
+                        <label class="form-check-label" for="otro_categoria_alojamiento">Otro</label>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="row mb-3">
+                <label for="ubicacion" class="col-sm-2 col-form-label">Ubicación:</label>
+                <div class="col-sm-7">
+                    <input type="text" class="form-control" id="ubicacion" name="ubicacion" value="<?= esc($alojamiento['ubicacion']) ?>" placeholder="calle 123, barrio" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="precio" class="col-sm-2 col-form-label">Precio:</label>
+                <div class="col-sm-7">
+                    <div class="input-group">
+                        <span class="input-group-text">$</span>
+                        <input type="number" class="form-control" id="precio" name="precio" step="0.01" value="<?= esc($alojamiento['precio']) ?>" placeholder="Ej. 1235.12" required>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="cupos" class="col-sm-2 col-form-label">Cupos Disponibles:</label>
+                <div class="col-sm-7">
+                    <input type="number" class="form-control" id="cupos" name="cupos" value="<?= esc($alojamiento['cupos']) ?>" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="imagen" class="col-sm-2 col-form-label">Imagen:</label>
+                <div class="col-sm-7">
+                    <input type="file" class="form-control" id="imagen" name="imagen">
+                </div>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
         </form>
 <?= $this->endSection() ?>

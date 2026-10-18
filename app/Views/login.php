@@ -15,19 +15,23 @@ Inicio de sesión
 
     <form action="<?= esc(site_url('login'), 'attr') ?>" method="post">
         <?= csrf_field() ?>
-        <div>
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" maxlength="50" autocomplete="username" required>
+        <div class="row mb-3">
+            <label for="email" class="col-sm-2 col-form-label">Email:</label>
+            <div class="col-sm-7">
+                <input type="email" class="form-control" id="email" name="email" maxlength="50" placeholder="Ingrese su email" required>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="password" class="col-sm-2 col-form-label">Contraseña:</label>
+            <div class="col-sm-7">
+                <input type="password" class="form-control" id="password" name="password" maxlength="120" placeholder="Ingrese su contraseña" autocomplete="current-password" required>
+            </div>
         </div>
 
-        <div>
-            <label for="password">Contraseña</label>
-            <input id="password" name="password" type="password" maxlength="120" autocomplete="current-password" required>
-        </div>
+        <p>¿No tienes una cuenta? <a href="<?= esc(site_url('registrar_usuario'), 'attr') ?>">Regístrate aquí</a>.</p>
 
-        <button type="submit">Ingresar</button>
+        <button type="submit" class="btn btn-primary">Ingresar</button>
     </form>
 
-    <p>¿No tienes una cuenta? <a href="<?= esc(site_url('registrar_usuario'), 'attr') ?>">Regístrate aquí</a>.</p>
     </section>
 <?= $this->endSection() ?>
