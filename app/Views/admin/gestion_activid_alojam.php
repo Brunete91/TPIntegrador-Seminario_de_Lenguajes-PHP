@@ -30,10 +30,10 @@ Gestión de Actividades y Alojamientos
                         <td><?= esc('$' . number_format((float) $act['precio'], 2, ',', '.')) ?></td>
                         <td><?= esc($act['cupos']) ?></td>
                         <td>
-                            <a href="<?= esc(site_url('admin/editar_actividad/' . $act['id']), 'attr') ?>">Editar</a>
+                            <a href="<?= esc(site_url('admin/editar_actividad/' . $act['id']), 'attr') ?>"><button type="button" class="btn btn-outline-warning">Editar</button></a>
                             <form action="<?= esc(site_url('admin/delete_actividad/' . $act['id']), 'attr') ?>" method="post" style="display:inline;">
                                 <?= csrf_field() ?>
-                                <button type="submit">Eliminar</button>
+                                <button type="submit" class="btn btn-outline-danger">Eliminar</button>
                             </form>
                         </td>
                     </tr>
@@ -65,10 +65,10 @@ Gestión de Actividades y Alojamientos
                         <td><?= esc('$' . number_format((float) $al['precio'], 2, ',', '.')) ?></td>
                         <td><?= esc($al['cupos']) ?></td>
                         <td>
-                            <a href="<?= esc(site_url('admin/editar_alojamiento/' . $al['id']), 'attr') ?>">Editar</a>
+                            <a href="<?= esc(site_url('admin/editar_alojamiento/' . $al['id']), 'attr') ?>"><button type="button" class="btn btn-outline-warning">Editar</button></a>
                             <form action="<?= esc(site_url('admin/delete_alojamiento/' . $al['id']), 'attr') ?>" method="post" style="display:inline;">
                                 <?= csrf_field() ?>
-                                <button type="submit">Eliminar</button>
+                                <button type="submit" class="btn btn-outline-danger">Eliminar</button>
                             </form>
                         </td>
                     </tr>
