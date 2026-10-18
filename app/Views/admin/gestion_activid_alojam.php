@@ -27,7 +27,7 @@ Gestión de Actividades y Alojamientos
                         <td><?= esc($act['nombre']) ?></td>
                         <td><?= esc($act['categoria']) ?></td>
                         <td><?= esc($act['ubicacion']) ?></td>
-                        <td><?= '$' . number_format((float) $act['precio'], 2, ',', '.') ?></td>
+                        <td><?= esc('$' . number_format((float) $act['precio'], 2, ',', '.')) ?></td>
                         <td><?= esc($act['cupos']) ?></td>
                         <td>
                             <a href="<?= esc(site_url('admin/editar_actividad/' . $act['id']), 'attr') ?>">Editar</a>
@@ -62,7 +62,7 @@ Gestión de Actividades y Alojamientos
                         <td><?= esc($al['nombre']) ?></td>
                         <td><?= esc($al['categoria']) ?></td>
                         <td><?= esc($al['ubicacion']) ?></td>
-                        <td><?= '$' . number_format((float) $al['precio'], 2, ',', '.') ?></td>
+                        <td><?= esc('$' . number_format((float) $al['precio'], 2, ',', '.')) ?></td>
                         <td><?= esc($al['cupos']) ?></td>
                         <td>
                             <a href="<?= esc(site_url('admin/editar_alojamiento/' . $al['id']), 'attr') ?>">Editar</a>

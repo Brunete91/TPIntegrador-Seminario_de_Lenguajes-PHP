@@ -25,7 +25,7 @@ Consulta de Reservas
                     <td><?= esc($res['actividad_alojamiento']) ?></td>
                     <td><?= esc($res['fecha_reserva']) ?></td>
                     <td><?= esc($res['cantidad']) ?></td>
-                    <td><?= esc($res['pago']) ?></td>
+                    <td><?= esc('$' . number_format((float) $res['pago'], 2, ',', '.')) ?></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
