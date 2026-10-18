@@ -53,18 +53,16 @@ class AdminController extends BaseController
 
     public function storeActividad()
     {
-        if (empty($_FILES['imagen']['name'])) {
+        $imagen = $this->request->getFile('imagen');
+        $tipoImagenPermitido = ['image/jpeg', 'image/png', 'image/gif', 'image/jpg'];
+
+        if ($imagen->getError() === UPLOAD_ERR_NO_FILE) {
+            $nombreImagen = 'logotipo.png';
+        } elseif (!in_array($imagen->getMimeType(), $tipoImagenPermitido)) {
             $nombreImagen = 'logotipo.png';
         } else {
-            $config['upload_path'] = './images/';
-            $config['allowed_types'] = 'jpg|jpeg|png|gif';
-            $this->load->library('upload', $config);
-            if (!$this->upload->do_upload('imagen')) {
-                $nombreImagen = 'logotipo.png';
-            } else {
-                $data = $this->upload->data();
-                $nombreImagen = $data['file_name'];
-            }
+            $imagen->move(FCPATH . 'images');
+            $nombreImagen = $imagen->getName();
         }
 
         $nombre = $this->request->getPost('nombre');
@@ -79,20 +77,18 @@ class AdminController extends BaseController
 
     public function storeAlojamiento()
     {
-        if (empty($_FILES['imagen']['name'])) {
+        $imagen = $this->request->getFile('imagen');
+        $tipoImagenPermitido = ['image/jpeg', 'image/png', 'image/gif', 'image/jpg'];
+
+        if ($imagen->getError() === UPLOAD_ERR_NO_FILE) {
+            $nombreImagen = 'logotipo.png';
+        } elseif (!in_array($imagen->getMimeType(), $tipoImagenPermitido)) {
             $nombreImagen = 'logotipo.png';
         } else {
-            $config['upload_path'] = './images/';
-            $config['allowed_types'] = 'jpg|jpeg|png|gif';
-            $this->load->library('upload', $config);
-            if (!$this->upload->do_upload('imagen')) {
-                $nombreImagen = 'logotipo.png';
-            } else {
-                $data = $this->upload->data();
-                $nombreImagen = $data['file_name'];
-            }
-        }    
-
+            $imagen->move(FCPATH . 'images');
+            $nombreImagen = $imagen->getName();
+        }
+  
         $nombre = $this->request->getPost('nombre');
         $categoria = $this->request->getPost('categoria');
         $ubicacion = $this->request->getPost('ubicacion');
@@ -115,13 +111,15 @@ class AdminController extends BaseController
         $alojamiento = $this->alojamientoModel->getAlojamiento($id);
 
         $nombreImagen = $alojamiento['imagen'];
+        $tipoImagenPermitido = ['image/jpeg', 'image/png', 'image/gif', 'image/jpg'];
 
         if ($imagen->getError() !== UPLOAD_ERR_NO_FILE) {
-            $config['upload_path'] = './images/';
-            $config['allowed_types'] = 'jpg|jpeg|png|gif';
-            $this->load->library('upload', $config);
-            $data = $this->upload->data();
-            $nombreImagen = $data['file_name'];
+            if (!in_array($imagen->getMimeType(), $tipoImagenPermitido)) {
+                $nombreImagen = $alojamiento['imagen'];
+            } else {
+                $imagen->move(FCPATH . 'images');
+                $nombreImagen = $imagen->getName();
+            }
         }
 
         $this->alojamientoModel->updateAlojamiento($id, $nombre, $categoria, $ubicacion, $precio, $cupos, $nombreImagen);
@@ -141,13 +139,15 @@ class AdminController extends BaseController
         $actividad = $this->actividadModel->getActividad($id);
 
         $nombreImagen = $actividad['imagen'];
+        $tipoImagenPermitido = ['image/jpeg', 'image/png', 'image/gif', 'image/jpg'];
 
         if ($imagen->getError() !== UPLOAD_ERR_NO_FILE) {
-            $config['upload_path'] = './images/';
-            $config['allowed_types'] = 'jpg|jpeg|png|gif';
-            $this->load->library('upload', $config);
-            $data = $this->upload->data();
-            $nombreImagen = $data['file_name'];
+            if (!in_array($imagen->getMimeType(), $tipoImagenPermitido)) {
+                $nombreImagen = $actividad['imagen'];
+            } else {
+                $imagen->move(FCPATH . 'images');
+                $nombreImagen = $imagen->getName();
+            }
         }
         
         $this->actividadModel->updateActividad($id, $nombre, $categoria, $ubicacion, $cupos, $precio, $nombreImagen);
