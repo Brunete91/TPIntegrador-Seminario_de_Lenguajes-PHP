@@ -11,7 +11,14 @@ Agregar Actividad
             <label for="nombre">Nombre de la actividad:</label>
             <input type="text" id="nombre" name="nombre" required><br><br>
             <label for="categoria">Categoría:</label>
-            <input type="text" id="categoria" name="categoria" required><br><br>
+            <input type="radio" id="categoria" name="categoria" value="Espacio verde" required> Espacio Verde
+            <input type="radio" id="categoria" name="categoria" value="Museo" required> Museo
+            <input type="radio" id="categoria" name="categoria" value="Bar" required> Bar
+            <input type="radio" id="categoria" name="categoria" value="Restaurante" required> Restaurante
+            <input type="radio" id="categoria" name="categoria" value="Centro cultural" required> Centro Cultural
+            <input type="radio" id="categoria" name="categoria" value="Navegación fluvial" required> Navegación Fluvial
+            <input type="radio" id="categoria" name="categoria" value="Cafetería" required> Cafetería
+            <input type="radio" id="categoria" name="categoria" value="Otro" required> Otro<br><br>
             <label for="ubicacion">Ubicación:</label>
             <input type="text" id="ubicacion" name="ubicacion" required><br><br>
             <label for="precio">Precio:</label>

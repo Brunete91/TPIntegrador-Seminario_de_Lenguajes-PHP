@@ -14,6 +14,7 @@ Consulta de Reservas
                 <th>Actividad/Alojamiento</th>
                 <th>Fecha de Reserva</th>
                 <th>Cantidad</th>
+                <th>Pago</th>
             </tr>
         </thead>
         <tbody>
@@ -24,6 +25,7 @@ Consulta de Reservas
                     <td><?= esc($res['actividad_alojamiento']) ?></td>
                     <td><?= esc($res['fecha_reserva']) ?></td>
                     <td><?= esc($res['cantidad']) ?></td>
+                    <td><?= esc($res['pago']) ?></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
