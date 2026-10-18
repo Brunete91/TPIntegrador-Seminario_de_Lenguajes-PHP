@@ -74,7 +74,7 @@ class AdminController extends BaseController
         $precio = $this->request->getPost('precio');
         $this->actividadModel->saveActividad($nombre, $categoria, $ubicacion, $cupos, $precio, $nombreImagen);
 
-        return redirect()->to(base_url('admin/gestion_activid_alojam'))->with('mensaje', 'Actividad creada con éxito');
+        return redirect()->to(base_url('admin/gestion_activid_alojam'));
     }
 
     public function storeAlojamiento()
@@ -100,7 +100,7 @@ class AdminController extends BaseController
         $cupos = $this->request->getPost('cupos');
         $this->alojamientoModel->saveAlojamiento($nombre, $categoria, $ubicacion, $cupos, $precio, $nombreImagen);
 
-        return redirect()->to(base_url('admin/gestion_activid_alojam'))->with('mensaje', 'Alojamiento creado con éxito');
+        return redirect()->to(base_url('admin/gestion_activid_alojam'));
     }
 
     public function updateAlojamiento($id)
@@ -126,7 +126,7 @@ class AdminController extends BaseController
 
         $this->alojamientoModel->updateAlojamiento($id, $nombre, $categoria, $ubicacion, $precio, $cupos, $nombreImagen);
 
-        return redirect()->to(base_url('admin/gestion_activid_alojam'))->with('mensaje', 'Alojamiento actualizado con éxito');
+        return redirect()->to(base_url('admin/gestion_activid_alojam'));
     }
 
     public function updateActividad($id)
@@ -151,21 +151,21 @@ class AdminController extends BaseController
         }
         
         $this->actividadModel->updateActividad($id, $nombre, $categoria, $ubicacion, $cupos, $precio, $nombreImagen);
-        return redirect()->to(base_url('admin/gestion_activid_alojam'))->with('mensaje', 'Actividad actualizada con éxito');
+        return redirect()->to(base_url('admin/gestion_activid_alojam'));
     }
 
     public function deleteAlojamiento($id)
     {
         $this->alojamientoModel->deleteAlojamiento($id);
 
-        return redirect()->to(base_url('admin/gestion_activid_alojam'))->with('mensaje', 'Alojamiento eliminado con éxito');
+        return redirect()->to(base_url('admin/gestion_activid_alojam'));
     }
 
     public function deleteActividad($id)
     {
         $this->actividadModel->deleteActividad($id);
 
-        return redirect()->to(base_url('admin/gestion_activid_alojam'))->with('mensaje', 'Actividad eliminada con éxito');
+        return redirect()->to(base_url('admin/gestion_activid_alojam'));
     }
 
     public function consulta_reservas()

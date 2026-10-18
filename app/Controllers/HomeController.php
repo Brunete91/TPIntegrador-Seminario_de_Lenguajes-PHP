@@ -60,6 +60,6 @@ class HomeController extends BaseController
         $rol = 'cliente';
         $this->userModel->saveUser($nombre, $email, $password, $rol);
 
-        return redirect()->to('/login')->with('success', 'Usuario registrado exitosamente.');
+        return redirect()->to('/login');
     }
 }
