@@ -35,7 +35,7 @@ Inicio de sesión
             </form>
 
             <div class="card-footer">
-                <p>¿No tienes una cuenta? <a href="<?= esc(site_url('registrar_usuario'), 'attr') ?>">Regístrate aquí</a>.</p>
+                <p>¿No tienes una cuenta? <a class="link-registro" href="<?= esc(site_url('registrar_usuario'), 'attr') ?>">Regístrate aquí</a>.</p>
             </div>
         </div>
     </div>

@@ -7,8 +7,8 @@ Gestión de Actividades y Alojamientos
 <?= $this->section('contenido') ?>
 <h1>Gestión de Actividades y Alojamientos</h1><br>
         <h3>Actividades</h3>
-        <a href="<?= esc(site_url('admin/crear_actividad'), 'attr') ?>">Añadir Actividad</a>
-        <table border="1">
+        <button type="button" class="btn btn-primary"><a href="<?= esc(site_url('admin/crear_actividad'), 'attr') ?>">Añadir Actividad</a></button>
+        <table class="table table-bordered border-primary">
             <thead>
                 <tr>
                     <th>Imagen</th>
@@ -23,7 +23,7 @@ Gestión de Actividades y Alojamientos
             <tbody>
                 <?php foreach ($actividades as $act): ?>
                     <tr>
-                        <td><img src="<?= esc(base_url('images/' . $act['imagen']), 'attr') ?>" alt="Imagen" width="100"></td>
+                        <td><img src="<?= esc(base_url('images/' . $act['imagen']), 'attr') ?>" alt="Imagen" width="100" class="rounded"></td>
                         <td><?= esc($act['nombre']) ?></td>
                         <td><?= esc($act['categoria']) ?></td>
                         <td><?= esc($act['ubicacion']) ?></td>
@@ -42,8 +42,8 @@ Gestión de Actividades y Alojamientos
         </table>
 
         <h3>Alojamientos</h3>
-        <a href="<?= esc(site_url('admin/crear_alojamiento'), 'attr') ?>">Añadir Alojamiento</a>
-        <table border="1">
+        <button type="button" class="btn btn-primary"><a href="<?= esc(site_url('admin/crear_alojamiento'), 'attr') ?>">Añadir Alojamiento</a></button>
+        <table class="table table-bordered border-primary">
             <thead>
                 <tr>
                     <th>Imagen</th>

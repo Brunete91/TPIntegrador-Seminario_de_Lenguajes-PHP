@@ -109,3 +109,18 @@ footer img {
     width: 20px;
     height: auto;
 }
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.link-registro {
+    color:lightcoral;
+    text-decoration: underline;
+}
+
+table {
+    margin: 10px;
+    text-align: center;
+}

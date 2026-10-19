@@ -6,7 +6,7 @@ Consulta de Usuarios
 
 <?= $this->section('contenido') ?>
 <h1>Consulta de Usuarios</h1>
-    <table border="1">
+    <table class="table table-bordered">
         <thead>
             <tr>
                 <th>ID</th>

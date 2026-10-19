@@ -6,7 +6,7 @@ Consulta de Reservas
 
 <?= $this->section('contenido') ?>
 <h1>Consulta de Reservas</h1>
-    <table border="1">
+    <table class="table table-bordered">
         <thead>
             <tr>
                 <th>ID</th>
