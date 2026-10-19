@@ -1,5 +1,5 @@
 body {
-    margin: 20px;
+    margin: 0px;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -47,7 +47,7 @@ body {
     flex: 1;
     display: flex;
     flex-direction: column;
-    padding-top: 50px;
+    margin: 20px;
 }
 
 .content main {
@@ -56,9 +56,17 @@ body {
 
 footer {
     margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+footer p {
+    margin: 0;
 }
 
 footer img {
-    width: 40px;
+    width: 20px;
     height: auto;
 }
