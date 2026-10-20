@@ -39,7 +39,7 @@ Gestión de Actividades y Alojamientos
                     </tr>
                 <?php endforeach; ?>
             </tbody>
-        </table>
+        </table><br><br>
 
         <h3>Alojamientos</h3>
         <button type="button" class="btn btn-primary"><a href="<?= esc(site_url('admin/crear_alojamiento'), 'attr') ?>">Añadir Alojamiento</a></button>

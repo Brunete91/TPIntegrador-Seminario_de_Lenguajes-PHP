@@ -5,7 +5,7 @@ use CodeIgniter\Model;
 class AlojamientoModel extends Model
 {
     protected $table = 'alojamientos';
-    protected $allowedFields = ['nombre', 'categoria', 'ubicacion', 'cupos', 'precio', 'imagen'];
+    protected $allowedFields = ['nombre', 'categoria', 'ubicacion', 'cupos', 'precio', 'imagen', 'informacion'];
 
     public function getAlojamientos()
     {
@@ -17,7 +17,7 @@ class AlojamientoModel extends Model
         return $this->where('id', $id)->first();
     }
 
-    public function saveAlojamiento($nombre, $categoria, $ubicacion, $cupos, $precio, $imagen)
+    public function saveAlojamiento($nombre, $categoria, $ubicacion, $cupos, $precio, $imagen, $informacion)
     {
         $this->save([
             'nombre' => $nombre,
@@ -25,11 +25,12 @@ class AlojamientoModel extends Model
             'ubicacion' => $ubicacion,
             'cupos' => $cupos,
             'precio' => $precio,
-            'imagen' => $imagen
+            'imagen' => $imagen,
+            'informacion' => $informacion
         ]);
     }
 
-    public function updateAlojamiento($id, $newNombre, $newCategoria, $newUbicacion, $newCupos, $newPrecio, $newImagen)
+    public function updateAlojamiento($id, $newNombre, $newCategoria, $newUbicacion, $newCupos, $newPrecio, $newImagen, $newInformacion)
     {
         $this->update($id, [
             'nombre' => $newNombre,
@@ -37,7 +38,8 @@ class AlojamientoModel extends Model
             'ubicacion' => $newUbicacion,
             'cupos' => $newCupos,
             'precio' => $newPrecio,
-            'imagen' => $newImagen
+            'imagen' => $newImagen,
+            'informacion' => $newInformacion
         ]);
     }
 

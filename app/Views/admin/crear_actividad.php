@@ -51,6 +51,12 @@ Agregar Actividad
                     </div>
             </fieldset>
             <div class="row mb-3">
+                <label for="informacion" class="col-sm-2 col-form-label">Detalles:</label>
+                <div class="col-sm-7">
+                    <textarea class="form-control" id="informacion" name="informacion" rows="3" maxlength="300" placeholder="Más información sobre la actividad"></textarea>
+                </div>
+            </div>
+            <div class="row mb-3">
                 <label for="ubicacion" class="col-sm-2 col-form-label">Ubicación:</label>
                 <div class="col-sm-7">
                     <input type="text" class="form-control" id="ubicacion" name="ubicacion" placeholder="calle 124, localidad" required>

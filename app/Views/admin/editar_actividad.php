@@ -52,6 +52,12 @@ Editar Actividad
                 </div>
             </fieldset>
             <div class="row mb-3">
+                <label for="informacion" class="col-sm-2 col-form-label">Detalles:</label>
+                <div class="col-sm-7">
+                    <textarea class="form-control" id="informacion" name="informacion" rows="3" maxlength="300" value="<?= esc($actividad['informacion']) ?>" placeholder="Más información sobre la actividad"></textarea>
+                </div>
+            </div>
+            <div class="row mb-3">
                 <label for="ubicacion" class="col-sm-2 col-form-label">Ubicación:</label>
                 <div class="col-sm-7">
                     <input type="text" class="form-control" id="ubicacion" name="ubicacion" value="<?= esc($actividad['ubicacion']) ?>" placeholder="calle 123, barrio" required>

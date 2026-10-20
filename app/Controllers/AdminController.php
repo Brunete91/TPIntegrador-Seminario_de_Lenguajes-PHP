@@ -70,7 +70,8 @@ class AdminController extends BaseController
         $ubicacion = $this->request->getPost('ubicacion');
         $cupos = $this->request->getPost('cupos');
         $precio = $this->request->getPost('precio');
-        $this->actividadModel->saveActividad($nombre, $categoria, $ubicacion, $cupos, $precio, $nombreImagen);
+        $informacion = $this->request->getPost('informacion');
+        $this->actividadModel->saveActividad($nombre, $categoria, $ubicacion, $cupos, $precio, $nombreImagen, $informacion);
 
         return redirect()->to(base_url('admin/gestion_activid_alojam'));
     }
@@ -94,7 +95,8 @@ class AdminController extends BaseController
         $ubicacion = $this->request->getPost('ubicacion');
         $precio = $this->request->getPost('precio');
         $cupos = $this->request->getPost('cupos');
-        $this->alojamientoModel->saveAlojamiento($nombre, $categoria, $ubicacion, $cupos, $precio, $nombreImagen);
+        $informacion = $this->request->getPost('informacion');
+        $this->alojamientoModel->saveAlojamiento($nombre, $categoria, $ubicacion, $cupos, $precio, $nombreImagen, $informacion);
 
         return redirect()->to(base_url('admin/gestion_activid_alojam'));
     }
@@ -106,6 +108,7 @@ class AdminController extends BaseController
         $ubicacion = $this->request->getPost('ubicacion');
         $precio = $this->request->getPost('precio');
         $cupos = $this->request->getPost('cupos');
+        $informacion = $this->request->getPost('informacion');
 
         $imagen = $this->request->getFile('imagen');
         $alojamiento = $this->alojamientoModel->getAlojamiento($id);
@@ -122,7 +125,7 @@ class AdminController extends BaseController
             }
         }
 
-        $this->alojamientoModel->updateAlojamiento($id, $nombre, $categoria, $ubicacion, $cupos, $precio, $nombreImagen);
+        $this->alojamientoModel->updateAlojamiento($id, $nombre, $categoria, $ubicacion, $cupos, $precio, $nombreImagen, $informacion);
 
         return redirect()->to(base_url('admin/gestion_activid_alojam'));
     }
@@ -134,6 +137,7 @@ class AdminController extends BaseController
         $ubicacion = $this->request->getPost('ubicacion');
         $cupos = $this->request->getPost('cupos');
         $precio = $this->request->getPost('precio');
+        $informacion = $this->request->getPost('informacion');
 
         $imagen = $this->request->getFile('imagen');
         $actividad = $this->actividadModel->getActividad($id);
@@ -150,7 +154,7 @@ class AdminController extends BaseController
             }
         }
         
-        $this->actividadModel->updateActividad($id, $nombre, $categoria, $ubicacion, $cupos, $precio, $nombreImagen);
+        $this->actividadModel->updateActividad($id, $nombre, $categoria, $ubicacion, $cupos, $precio, $nombreImagen, $informacion);
         return redirect()->to(base_url('admin/gestion_activid_alojam'));
     }
 
