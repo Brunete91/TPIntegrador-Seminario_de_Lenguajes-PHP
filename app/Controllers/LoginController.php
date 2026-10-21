@@ -21,7 +21,7 @@ class LoginController extends BaseController
             if ($user['rol'] === 'admin') {
                 return redirect()->to(site_url('admin/gestion_activid_alojam'));
             } else {
-                return redirect()->to(site_url('usuario/catalogo_activid_alojam'));
+                return redirect()->to(site_url('cliente/historial-reservas'));
             }
         }
 
@@ -63,7 +63,7 @@ class LoginController extends BaseController
         if ($user['rol'] === 'admin') {
             return redirect()->to(site_url('admin/gestion_activid_alojam'));
         } else {
-            return redirect()->to(site_url('usuario/catalogo_activid_alojam'));
+            return redirect()->to(site_url('cliente/historial-reservas'));
         }
     }
 

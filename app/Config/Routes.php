@@ -11,6 +11,7 @@ $routes->get('/gastronomia_actividades', 'HomeController::catalogo');
 $routes->get('/geografia', 'HomeController::zona_geo');
 $routes->get('/lugares_historicos', 'HomeController::lugares_imp');
 $routes->get('/info_turista', 'HomeController::info_practica');
+$routes->get('/mas_info', 'HomeController::mas_info');
 $routes->get('/login', 'HomeController::login');
 $routes->post('/login', 'LoginController::autenticar');
 $routes->get('/registrar_usuario', 'HomeController::registrar_usuario');
@@ -30,5 +31,15 @@ $routes->group('', ['filter' => 'login'], static function (RouteCollection $rout
     $routes->post('/admin/store_actividad', 'AdminController::storeActividad');
     $routes->post('/admin/delete_alojamiento/(:num)', 'AdminController::deleteAlojamiento/$1');
     $routes->post('/admin/delete_actividad/(:num)', 'AdminController::deleteActividad/$1');
+    $routes->post('logout', 'LoginController::logout');
+});
+
+$routes->group('', ['filter' => 'login'], static function (RouteCollection $routes) {
+    $routes->get('/cliente/catalogo-actividades', 'ClienteController::verActividades');
+    $routes->get('/cliente/catalogo-alojamientos', 'ClienteController::verAlojamientos');
+    $routes->get('/cliente/detalle_actividad/(:num)', 'ClienteController::detalle_actividad/$1');
+    $routes->get('/cliente/detalle_alojamiento/(:num)', 'ClienteController::detalle_alojamiento/$1');
+    $routes->get('/cliente/historial-reservas', 'ClienteController::historial_reservas');
+    $routes->post('/cliente/store_reserva', 'ClienteController::storeReserva');
     $routes->post('logout', 'LoginController::logout');
 });

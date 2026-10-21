@@ -13,16 +13,19 @@
           <a class="nav-link" href="<?= esc(base_url('/lugares_historicos'), 'attr') ?>">Lugares Históricos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?= esc(base_url('/gastronomia_actividades'), 'attr') ?>">Gastronomía y Actividades</a>
+          <a class="nav-link" href="<?= esc(base_url('/gastronomia_actividades'), 'attr') ?>">Gastronomía</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?= esc(base_url('/geografia'), 'attr') ?>">Geografía y Clima</a>
+          <a class="nav-link" href="<?= esc(base_url('/geografia'), 'attr') ?>">Clima</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?= esc(base_url('/cont_sociocultural'), 'attr') ?>">Contexto Sociocultural</a>
+          <a class="nav-link" href="<?= esc(base_url('/cont_sociocultural'), 'attr') ?>">Historia</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?= esc(base_url('/info_turista'), 'attr') ?>">Información para Turistas</a>
+          <a class="nav-link" href="<?= esc(base_url('/info_turista'), 'attr') ?>">Transporte</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?= esc(base_url('/mas_info'), 'attr') ?>">Más Información</a>
         </li>
         <li class="nav-item ms-auto">
           <a class="nav-link" href="<?= esc(base_url('/login'), 'attr') ?>">Iniciar Sesión</a>

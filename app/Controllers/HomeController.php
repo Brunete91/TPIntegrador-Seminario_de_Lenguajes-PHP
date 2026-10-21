@@ -62,4 +62,9 @@ class HomeController extends BaseController
 
         return redirect()->to('/login');
     }
+
+    public function mas_info()
+    {
+        return view('mas_info');
+    }
 }

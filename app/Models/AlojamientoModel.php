@@ -7,14 +7,58 @@ class AlojamientoModel extends Model
     protected $table = 'alojamientos';
     protected $allowedFields = ['nombre', 'categoria', 'ubicacion', 'cupos', 'precio', 'imagen', 'informacion'];
 
-    public function getAlojamientos()
+    public function getIdMasReservada()
     {
-        return $this->findAll();
+        $db = \Config\Database::connect();
+        $builder = $db->table('reservas');
+    
+        $builder->select('id_alojamiento, SUM(cantidad) as total_cupos_vendidos');
+        $builder->groupBy('id_alojamiento');
+        $builder->orderBy('total_cupos_vendidos', 'DESC');
+        $builder->limit(1);
+    
+        $resultado = $builder->get()->getRow();
+    
+        return $resultado ? $resultado->id_alojamiento : null;
+    }
+
+    public function getAlojamientosConEstado()
+    {
+        $alojamientos = $this->findAll();
+        $idMasReservada = $this->getIdMasReservada();
+
+        foreach ($alojamientos as &$alojamiento) {
+            if ($alojamiento['id'] == $idMasReservada && $idMasReservada !== null){
+                $alojamiento['mensaje_estado'] = 'Más elegido';
+                $alojamiento['clase_badge'] = 'text-bg-success';
+            }elseif ($alojamiento['cupos'] == 0) {
+                $alojamiento['mensaje_estado'] = 'Sin cupo';
+                $alojamiento['clase_badge'] = 'text-bg-danger';
+            } elseif ($alojamiento['cupos'] <= 4) {
+                $alojamiento['mensaje_estado'] = 'Últimos cupos';
+                $alojamiento['clase_badge'] = 'text-bg-warning';
+            } else {
+                $alojamiento['mensaje_estado'] = 'Disponible';
+                $alojamiento['clase_badge'] = 'text-bg-secondary';
+            }
+        }
+        return $alojamientos;
     }
 
     public function getAlojamiento($id)
     {
         return $this->where('id', $id)->first();
+    }
+
+    public function descontarCupos($id, $cantidad): bool
+    {
+        $builder = $this->builder();
+        $builder->set('cupos', 'cupos - ' . (int) $cantidad, false)
+            ->where('id', $id)
+            ->where('cupos >=', $cantidad)
+            ->update();
+
+        return $this->db->affectedRows() === 1;
     }
 
     public function saveAlojamiento($nombre, $categoria, $ubicacion, $cupos, $precio, $imagen, $informacion)

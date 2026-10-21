@@ -50,13 +50,13 @@ Editar Alojamiento
             <div class="row mb-3">
                 <label for="informacion" class="col-sm-2 col-form-label">Detalles:</label>
                 <div class="col-sm-7">
-                    <textarea class="form-control" id="informacion" name="informacion" rows="3" maxlength="300" value="<?= esc($alojamiento['informacion']) ?>" placeholder="Más información sobre el alojamiento"></textarea>
+                    <textarea class="form-control" id="informacion" name="informacion" rows="3" maxlength="300" value="<?= esc($alojamiento['informacion']) ?>" ></textarea>
                 </div>
             </div>
             <div class="row mb-3">
                 <label for="ubicacion" class="col-sm-2 col-form-label">Ubicación:</label>
                 <div class="col-sm-7">
-                    <input type="text" class="form-control" id="ubicacion" name="ubicacion" value="<?= esc($alojamiento['ubicacion']) ?>" placeholder="calle 123, barrio" required>
+                    <input type="text" class="form-control" id="ubicacion" name="ubicacion" value="<?= esc($alojamiento['ubicacion']) ?>" required>
                 </div>
             </div>
             <div class="row mb-3">
@@ -64,7 +64,7 @@ Editar Alojamiento
                 <div class="col-sm-7">
                     <div class="input-group">
                         <span class="input-group-text">$</span>
-                        <input type="number" class="form-control" id="precio" name="precio" step="0.01" value="<?= esc($alojamiento['precio']) ?>" placeholder="Ej. 1235.12" required>
+                        <input type="number" class="form-control" id="precio" name="precio" step="0.01" value="<?= esc($alojamiento['precio']) ?>" required>
                     </div>
                 </div>
             </div>

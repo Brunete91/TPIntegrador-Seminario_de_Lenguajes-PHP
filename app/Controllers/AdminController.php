@@ -20,8 +20,8 @@ class AdminController extends BaseController
     public function gestion_actividades_alojamiento()
     {   
         $data = [
-            'alojamientos' => $this->alojamientoModel->getAlojamientos(),
-            'actividades' => $this->actividadModel->getActividades(),
+            'alojamientos' => $this->alojamientoModel->getAlojamientosConEstado(),
+            'actividades' => $this->actividadModel->getActividadesConEstado(),
         ];
 
         return view('admin/gestion_activid_alojam', $data);

@@ -5,8 +5,9 @@ Consulta de Usuarios
 <?= $this->endSection() ?>
 
 <?= $this->section('contenido') ?>
-<h1>Consulta de Usuarios</h1>
-    <table class="table table-bordered">
+<div class="container-tabla">
+    <h1>Consulta de Usuarios</h1>
+    <table class="table table-bordered gestion-tabla">
         <thead>
             <tr>
                 <th>ID</th>
@@ -26,4 +27,5 @@ Consulta de Usuarios
             <?php endforeach; ?>
         </tbody>
     </table>
+</div>
 <?= $this->endSection() ?>

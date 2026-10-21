@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
 body {
     margin: 0px;
     min-height: 100vh;
@@ -8,6 +10,9 @@ body {
     overflow-x: hidden;
     color: white;
     font-family: sans-serif;
+    box-sizing: border-box;
+    padding: 0%;
+    font-family: "Poppins", sans-serif;
 }
 
 .glow-background {
@@ -94,7 +99,7 @@ body {
 }
 
 footer {
-    margin-top: auto;
+    margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -123,4 +128,107 @@ a {
 table {
     margin: 10px;
     text-align: center;
+}
+
+li.nav-item a:hover{
+    border-bottom: 2px solid #3498db;
+}
+
+p a{
+    color:#3498db;
+    text-decoration: underline;
+}
+
+.contenedor-principal{
+    margin-top: 15px;
+    text-align: center;
+    justify-content: center;
+}
+
+.contenedor-principal .fila{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0 75px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.contenedor-principal .top-act{
+    flex-basis: 30%;
+    padding: 40px 20px;
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.5) ;
+}
+
+.contenedor-principal .top-act h4{
+    font-weight: 600;
+    color: #555;
+    font-size: 18px;
+    margin-top: 12px;
+}
+
+.contenedor-principal .top-act:hover{
+    box-shadow: none;
+}
+
+.contenedor-principal .top-act img{
+    width: 428px;
+    height: 250px;
+    margin-top: 20px;
+    border-radius: 10%;
+}
+
+.contenedor-principal a{
+    color:#3498db;
+    text-decoration: underline;
+}
+
+li a{
+    color:#3498db;
+    text-decoration: underline;
+}
+
+.contenedor-info{
+    margin-left: 70px;
+    margin-right: 70px;
+    font-size: 15px;
+}
+
+.detalle-catalogo{
+    margin-left: 70px;
+    margin-right: 70px;
+    font-size: 30px;
+}
+
+.top-info{
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.container-tabla{
+    margin-top: 15px;
+    text-align: center;
+    justify-content: center;
+}
+
+.gestion-tabla {
+    width: 100%;
+    table-layout: fixed;
+    --bs-table-bg: rgba(31, 41, 55, 0.5);
+    --bs-table-color: white;
+}
+
+.gestion-tabla th,
+.gestion-tabla td {
+    height: 110px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+}
+
+.gestion-tabla .imagen-tabla {
+    width: 130px;
+    height: 90px;
+    object-fit: cover;
 }

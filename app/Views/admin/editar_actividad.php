@@ -54,13 +54,13 @@ Editar Actividad
             <div class="row mb-3">
                 <label for="informacion" class="col-sm-2 col-form-label">Detalles:</label>
                 <div class="col-sm-7">
-                    <textarea class="form-control" id="informacion" name="informacion" rows="3" maxlength="300" value="<?= esc($actividad['informacion']) ?>" placeholder="Más información sobre la actividad"></textarea>
+                    <textarea class="form-control" id="informacion" name="informacion" rows="3" maxlength="300" value="<?= esc($actividad['informacion']) ?>" required></textarea>
                 </div>
             </div>
             <div class="row mb-3">
                 <label for="ubicacion" class="col-sm-2 col-form-label">Ubicación:</label>
                 <div class="col-sm-7">
-                    <input type="text" class="form-control" id="ubicacion" name="ubicacion" value="<?= esc($actividad['ubicacion']) ?>" placeholder="calle 123, barrio" required>
+                    <input type="text" class="form-control" id="ubicacion" name="ubicacion" value="<?= esc($actividad['ubicacion']) ?>" required>
                 </div>
             </div>
             <div class="row mb-3">
@@ -68,7 +68,7 @@ Editar Actividad
                 <div class="col-sm-7">
                     <div class="input-group">
                         <span class="input-group-text">$</span>
-                        <input type="number" class="form-control" id="precio" name="precio" step="0.01" value="<?= esc($actividad['precio']) ?>" placeholder="Ej. 1549.15" required>
+                        <input type="number" class="form-control" id="precio" name="precio" step="0.01" value="<?= esc($actividad['precio']) ?>" required>
                     </div>
                 </div>
             </div>
