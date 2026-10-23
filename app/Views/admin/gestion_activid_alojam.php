@@ -29,7 +29,13 @@ Gestión de Actividades y Alojamientos
                     <td><?= esc($act['categoria']) ?></td>
                     <td><?= esc($act['ubicacion']) ?></td>
                     <td><?= esc('$' . number_format((float) $act['precio'], 2, ',', '.')) ?></td>
-                    <td><span class="badge <?= $act['clase_badge']; ?>"><?= $act['mensaje_estado']; ?></span><?= esc($act['cupos']) ?></td>
+                    <td>
+                        <?php if ($act['es_mas_elegido']): ?>
+                            <span class="badge text-bg-success">Más elegido</span>
+                        <?php endif; ?>
+                        <span class="badge <?= esc($act['clase_badge'], 'attr') ?>"><?= esc($act['mensaje_estado']) ?></span>
+                        <?= esc($act['cupos']) ?>
+                    </td>
                     <td>
                         <a href="<?= esc(site_url('admin/editar_actividad/' . $act['id']), 'attr') ?>"><button type="button" class="btn btn-outline-warning">Editar</button></a>
                         <form action="<?= esc(site_url('admin/delete_actividad/' . $act['id']), 'attr') ?>" method="post" style="display:inline;">
@@ -64,7 +70,13 @@ Gestión de Actividades y Alojamientos
                     <td><?= esc($al['categoria']) ?></td>
                     <td><?= esc($al['ubicacion']) ?></td>
                     <td><?= esc('$' . number_format((float) $al['precio'], 2, ',', '.')) ?></td>
-                    <td><span class="badge <?= $al['clase_badge']; ?>"><?= $al['mensaje_estado']; ?></span><?= esc($al['cupos']) ?></td>
+                    <td>
+                        <?php if ($al['es_mas_elegido']): ?>
+                            <span class="badge text-bg-success">Más elegido</span>
+                        <?php endif; ?>
+                        <span class="badge <?= esc($al['clase_badge'], 'attr') ?>"><?= esc($al['mensaje_estado']) ?></span>
+                        <?= esc($al['cupos']) ?>
+                    </td>
                     <td>
                         <a href="<?= esc(site_url('admin/editar_alojamiento/' . $al['id']), 'attr') ?>"><button type="button" class="btn btn-outline-warning">Editar</button></a>
                         <form action="<?= esc(site_url('admin/delete_alojamiento/' . $al['id']), 'attr') ?>" method="post" style="display:inline;">

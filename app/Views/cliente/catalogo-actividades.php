@@ -16,6 +16,9 @@ Catálogo de Actividades
                         Categoría: <?= esc($item['categoria']) ?><br>
                         Ubicación: <?= esc($item['ubicacion']) ?><br>
                         Precio: $<?= esc($item['precio']) ?><br>
+                        <?php if ($item['es_mas_elegido']): ?>
+                            <span class="badge text-bg-success">Más elegido</span>
+                        <?php endif; ?>
                         <span class="badge <?= esc($item['clase_badge'], 'attr') ?>">
                             <?= esc($item['mensaje_estado']) ?>
                         </span>

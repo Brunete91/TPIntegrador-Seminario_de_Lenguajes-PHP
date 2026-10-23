@@ -29,10 +29,9 @@ class ActividadModel extends Model
         $idMasReservada = $this->getIdMasReservada();
 
         foreach ($actividades as &$actividad) {
-            if ($actividad['id'] == $idMasReservada && $idMasReservada !== null){
-                $actividad['mensaje_estado'] = 'Más elegido';
-                $actividad['clase_badge'] = 'text-bg-success';
-            } elseif ($actividad['cupos'] == 0) {
+            $actividad['es_mas_elegido'] = $idMasReservada !== null && $actividad['id'] == $idMasReservada;
+
+            if ($actividad['cupos'] == 0) {
                 $actividad['mensaje_estado'] = 'Sin cupo';
                 $actividad['clase_badge'] = 'text-bg-danger';
             } elseif ($actividad['cupos'] <= 4) {

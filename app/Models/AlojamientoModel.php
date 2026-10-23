@@ -29,10 +29,9 @@ class AlojamientoModel extends Model
         $idMasReservada = $this->getIdMasReservada();
 
         foreach ($alojamientos as &$alojamiento) {
-            if ($alojamiento['id'] == $idMasReservada && $idMasReservada !== null){
-                $alojamiento['mensaje_estado'] = 'Más elegido';
-                $alojamiento['clase_badge'] = 'text-bg-success';
-            }elseif ($alojamiento['cupos'] == 0) {
+            $alojamiento['es_mas_elegido'] = $idMasReservada !== null && $alojamiento['id'] == $idMasReservada;
+
+            if ($alojamiento['cupos'] == 0) {
                 $alojamiento['mensaje_estado'] = 'Sin cupo';
                 $alojamiento['clase_badge'] = 'text-bg-danger';
             } elseif ($alojamiento['cupos'] <= 4) {
