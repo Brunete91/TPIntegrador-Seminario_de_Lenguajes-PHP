@@ -9,6 +9,9 @@ Registro de usuario
     <div class="card text-center login-card">
         <h3 class="card-header">Registro de usuario</h3>
         <div class="card-body">
+            <?php if ($mensaje !== null): ?>
+                <p class="text-danger"><?= esc($mensaje) ?></p>
+            <?php endif; ?>
             <form action="<?= site_url('/store_usuario') ?>" method="post">
                 <?= csrf_field() ?>
                 <div class="row mb-3">

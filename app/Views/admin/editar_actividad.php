@@ -54,7 +54,7 @@ Editar Actividad
             <div class="row mb-3">
                 <label for="informacion" class="col-sm-2 col-form-label">Detalles:</label>
                 <div class="col-sm-7">
-                    <textarea class="form-control" id="informacion" name="informacion" rows="3" maxlength="2000" value="<?= esc($actividad['informacion']) ?>" required></textarea>
+                <textarea class="form-control" id="informacion" name="informacion" rows="3" maxlength="2000" required><?= esc($actividad['informacion']) ?></textarea>
                 </div>
             </div>
             <div class="row mb-3">

@@ -13,6 +13,7 @@ class AlojamientoModel extends Model
         $builder = $db->table('reservas');
     
         $builder->select('id_alojamiento, SUM(cantidad) as total_cupos_vendidos');
+        $builder->where('id_alojamiento IS NOT NULL', null, false);
         $builder->groupBy('id_alojamiento');
         $builder->orderBy('total_cupos_vendidos', 'DESC');
         $builder->limit(1);

@@ -13,6 +13,7 @@ class ActividadModel extends Model
         $builder = $db->table('reservas');
     
         $builder->select('id_actividad, SUM(cantidad) as total_cupos_vendidos');
+        $builder->where('id_actividad IS NOT NULL', null, false);
         $builder->groupBy('id_actividad');
         $builder->orderBy('total_cupos_vendidos', 'DESC');
         $builder->limit(1);

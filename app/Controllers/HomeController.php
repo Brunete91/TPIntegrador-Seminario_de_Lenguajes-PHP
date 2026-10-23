@@ -49,18 +49,33 @@ class HomeController extends BaseController
 
     public function registrar_usuario()
     {
-        return view('registrar_usuario');
+        return view('registrar_usuario', [
+            'mensaje' => session()->getFlashdata('mensaje'),
+        ]);
     }
 
     public function storeUsuario()
     {
-        $nombre = $this->request->getPost('nombre');
-        $email = $this->request->getPost('email');
-        $password = $this->request->getPost('password');
-        $rol = 'cliente';
-        $this->userModel->saveUser($nombre, $email, $password, $rol);
+        $datos = $this->request->getPost(['nombre', 'email', 'password']);
 
-        return redirect()->to('/login');
+        if (! $this->validateData($datos, [
+            'nombre' => 'required|max_length[75]',
+            'email' => 'required|valid_email|max_length[50]|is_unique[users.email]',
+            'password' => 'required|max_length[128]',
+        ], [
+            'email' => [
+                'is_unique' => 'Ese email ya está registrado.',
+            ],
+        ])) {
+            session()->setFlashdata('mensaje', implode(' ', $this->validator->getErrors()));
+
+            return redirect()->to(site_url('registrar_usuario'));
+        }
+
+        $rol = 'cliente';
+        $this->userModel->saveUser($datos['nombre'], trim($datos['email']), $datos['password'], $rol);
+
+        return redirect()->to(site_url('login'));
     }
 
     public function mas_info()
